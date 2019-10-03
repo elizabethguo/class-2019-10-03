@@ -1,0 +1,30 @@
+---
+title: "practice"
+author: "Elizabeth Guo"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(googlesheets4)
+library(tidyverse)
+```
+
+```{r}
+
+
+my_cold_call <- function(){
+  sheets_deauth()
+  x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg")
+  x %>% 
+  select(Student) %>% 
+  sample_n(1) %>% 
+  pull(Student)
+}
+
+my_cold_call()
+
+
+```
+
