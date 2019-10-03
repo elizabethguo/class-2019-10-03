@@ -13,17 +13,18 @@ library(tidyverse)
 
 ```{r}
 
-
-my_cold_call <- function(){
+cold_call <- function(){
   sheets_deauth()
-  x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg")
+  x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg") 
   x %>% 
   select(Student) %>% 
   sample_n(1) %>% 
   pull(Student)
+  
+
 }
 
-my_cold_call()
+cold_call()
 
 
 ```
